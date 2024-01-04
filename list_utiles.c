@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 09:02:45 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2023/12/28 11:39:51 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/04 15:35:50 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,16 @@ void	add_back(t_stack **lst, t_stack *new)
 void	free_stack(t_stack **stack)
 {
 	t_stack	*temp;
+	t_stack	*next;
 
-	while ((*stack)->next != NULL)
+	temp = (*stack)->next;
+	while (temp != *stack)
 	{
-		temp = (*stack)->next;
-		free(*stack);
-		*stack = NULL;
-		*stack = temp;
+		next = temp->next;
+		free(temp);
+		temp = next;
 	}
+	free(*stack);
 }
 
 int	count_nodes(t_stack *stack)
