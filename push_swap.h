@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 13:32:33 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2023/12/28 13:01:15 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/08 11:19:36 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void		rotate(t_stack **lst, char c);
 void		reverse_rotate(t_stack **lst, char c);
 void		sort_three(t_stack **a);
 void		sort_five(t_stack **a, int count);
+void		sort_big(t_stack **a, int count);
+int			*lis(int *arr, int len);
 
 void		print(t_stack *stack);
 
