@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 13:32:30 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2023/12/28 11:41:26 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/08 09:25:41 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int argc, char *argv[])
 	if (!a)
 	{
 		write(2, "Error\n", 7);
-		exit (0);
+		return (-1);
 	}
 	algo(&a);
 	free_stack(&a);

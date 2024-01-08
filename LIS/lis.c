@@ -6,49 +6,56 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 12:48:12 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/02 14:17:35 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/08 10:48:52 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
+
+void print(int *c)
+{
+	int i = -1;
+	while (i++ < 5)
+		printf("value %d is = %d\n", i, c[i]);
+}
 
 int main()
 {
-	int arr[11] = {3, 4, -1, 5, 8, 2, 3, 12, 7, 9, 10};
-	int i = -1;
-	int j = 0;
-	int k = 0;
-	int len = 0;
+	int len = 12;
+	int arr[12] = {3, 4, -1, 5, 8, 2, 3, 12, 7, 9, 10, 2};
+	// print(arr);
+	// int arr[7] = {3, 4, -1, 0, 6, 2, 3};
 	int t[11];
-	int r[11];
-
-	while (i++ < 10)
-		r[i] = -1;
-
-	t[0] = arr[i];
-	i++;
-
-	while (i < 11)
+	int *lis;
+	int j = 0;
+	int max = 1;
+	
+	int i = -1;
+	while (i++ < len - 1)
+		t[i] = 1;
+	i = 0;
+	while (i++ < len - 1)
 	{
-		if (arr[i] > t[len])
+		while (j < i)
 		{
-			t[i] = arr[i];
-			r[i] = t[len];
-			len++;
+			if (arr[j] < arr[i])
+				t[i] = t[j] + 1;
+			if (t[i] > max)
+				max = t[i];
+			j++;
 		}
-		else if (arr[i] < t[j])
-			t[j] = arr[i];
-		else
-		{
-			while (arr[i] > t[j])
-				k++;
-			t[k] = arr[i];
-			k = 0;
-		}
-		i++;
+		j = 0;
 	}
-
-	i = -1;
-	while (i++ < 10)
-		printf("value %d is = %d\n", i, r[i]);
+	lis = (int *)malloc(sizeof(int) * max);
+	while (max != 0)
+	{
+		if (t[i] == max)
+		{
+			lis[max - 1] = arr[i];
+			max--;
+		}
+		i--;
+	}
+	print(lis);
 }

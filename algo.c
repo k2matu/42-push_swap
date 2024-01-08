@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 12:31:21 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2023/12/28 13:08:07 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/08 10:51:01 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,6 @@ void	algo(t_stack **a)
 		sort_three(&(*a));
 	else if (count < 6)
 		sort_five(&(*a), count);
+	else
+		sort_big(&(*a), count);
 }
