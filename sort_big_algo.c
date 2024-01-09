@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:50:16 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/09 11:16:24 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/09 12:32:04 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ void	sort_big(t_stack **a, int count)
 	b = NULL;
 	j = 0;
 	arr = lst_to_arr(a, count);
-	l = lis(arr, count);
+	l = get_lis(arr, count);
 	i = 0;
 	while (i < count)
 	{
 		if (l[j] == (*a)->data)
 		{
-			*a = (*a)->next;
+			rotate(&(*a), 'a');
 			j++;
 		}
 		else

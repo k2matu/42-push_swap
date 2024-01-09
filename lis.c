@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 12:48:12 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/09 12:05:48 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/09 12:32:20 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	*fill_t(int len)
 	return (t);
 }
 
-int	*lis(int *arr, int len)
+int	*get_lis(int *arr, int len)
 {
 	int	*t;
 	int	i;
