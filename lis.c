@@ -6,12 +6,11 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 12:48:12 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/08 12:21:22 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/09 10:11:06 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "push_swap.h"
 
 int	*lis(int *arr, int len)
 {
