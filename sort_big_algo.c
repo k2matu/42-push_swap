@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:50:16 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/09 12:32:04 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/10 10:47:06 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	sort_big(t_stack **a, int count)
 	j = 0;
 	arr = lst_to_arr(a, count);
 	l = get_lis(arr, count);
+	quick_sort(arr, count);
 	i = 0;
 	while (i < count)
 	{
