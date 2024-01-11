@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 13:32:33 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/10 10:41:23 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/11 11:45:54 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_stack
 {
 	long			data ;
+	int				pos ;
 	struct s_stack	*prev ;
 	struct s_stack	*next ;
 }	t_stack;

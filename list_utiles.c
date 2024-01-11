@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 09:02:45 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/04 15:40:12 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/11 11:47:09 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_stack	*add_new(long data)
 	if (!new)
 		return (NULL);
 	new->data = data;
+	new->pos = -1;
 	new->next = new;
 	new->prev = new;
 	return (new);

@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 13:32:30 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/09 10:24:23 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/11 11:58:19 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ void	print(t_stack *stack)
 		printf("empty stack\n");
 		return ;
 	}
-	printf("%ld\n", stack->data);
+	printf("[%d] = %ld\n", stack->pos, stack->data);
 	stack = stack->next;
 	while (temp != stack)
 	{
-		printf("%ld\n", stack->data);
+		printf("[%d] = %ld\n", stack->pos, stack->data);
 		stack = stack->next;
 	}
 	printf("\n");
