@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:50:16 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/12 10:33:25 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/12 11:40:13 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	fill_stack_pos(t_stack **a, int *arr, int count)
 		j = 0;
 		i++;
 	}
-	free(arr);
 }
 
 void	push_to_stack_b(int *l, t_stack **a, t_stack **b, int count)
@@ -85,7 +84,10 @@ void	sort_big(t_stack **a, int count)
 	l = get_lis(arr, count);
 	quick_sort(arr, count);
 	fill_stack_pos(&(*a), arr, count);
+	free(arr);
 	push_to_stack_b(l, &(*a), &b, count);
+	free(l);
 	print(*a);
 	print(b);
+	free_stack(&b);
 }
