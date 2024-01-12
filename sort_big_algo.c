@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:50:16 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/11 12:33:09 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/12 10:33:25 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ int	*lst_to_arr(t_stack **a, int count)
 	return (arr);
 }
 
-void fill_stack_pos(t_stack **a, int *arr, int count)
+void	fill_stack_pos(t_stack **a, int *arr, int count)
 {
-	int i;
-	int j;
-	
+	int	i;
+	int	j;
+
 	i = 0;
 	j = 0;
 	while (i < count)
@@ -51,34 +51,41 @@ void fill_stack_pos(t_stack **a, int *arr, int count)
 		j = 0;
 		i++;
 	}
+	free(arr);
+}
+
+void	push_to_stack_b(int *l, t_stack **a, t_stack **b, int count)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < count)
+	{
+		if (l[j] == (*a)->data)
+		{
+			rotate(&(*a), &(*b), 'a');
+			j++;
+		}
+		else
+			push(&(*a), &(*b), 'b');
+		i++;
+	}
 }
 
 void	sort_big(t_stack **a, int count)
 {
 	int		*l;
 	int		*arr;
-	int		j;
-	int		i;
 	t_stack	*b;
 
 	b = NULL;
-	j = 0;
 	arr = lst_to_arr(a, count);
 	l = get_lis(arr, count);
 	quick_sort(arr, count);
 	fill_stack_pos(&(*a), arr, count);
-	i = 0;
-	while (i < count)
-	{
-		if (l[j] == (*a)->data)
-		{
-			rotate(&(*a), 'a');
-			j++;
-		}
-		else
-			push(&(*a), &b, 'b');
-		i++;
-	}
+	push_to_stack_b(l, &(*a), &b, count);
 	print(*a);
 	print(b);
 }

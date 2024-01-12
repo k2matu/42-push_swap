@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 13:50:46 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/11 12:11:16 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/12 10:15:26 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,18 +57,36 @@ void	push(t_stack **src, t_stack **dest, char c)
 	printf("p%c\n", c);
 }
 
-void	rotate(t_stack **lst, char c)
+void	rotate(t_stack **a_lst, t_stack **b_lst, char c)
 {
-	if (!(*lst) || (*lst)->next == *lst)
-		return ;
-	*lst = (*lst)->next;
+	if (c == 'a' || c == 'r')
+	{
+		if (!(*a_lst) || (*a_lst)->next == *a_lst)
+			return ;
+		*a_lst = (*a_lst)->next;
+	}
+	if (c == 'b' || c == 'r')
+	{
+		if (!(*b_lst) || (*b_lst)->next == *b_lst)
+			return ;
+		*b_lst = (*b_lst)->next;
+	}
 	printf("r%c\n", c);
 }
 
-void	reverse_rotate(t_stack **lst, char c)
+void	reverse_rotate(t_stack **a_lst, t_stack **b_lst, char c)
 {
-	if (!(*lst) || (*lst)->next == *lst)
-		return ;
-	*lst = (*lst)->prev;
+	if (c == 'a' || c == 'r')
+	{
+		if (!(*a_lst) || (*a_lst)->next == *a_lst)
+			return ;
+		*a_lst = (*a_lst)->prev;
+	}
+	if (c == 'b' || c == 'r')
+	{
+		if (!(*b_lst) || (*b_lst)->next == *b_lst)
+			return ;
+		*b_lst = (*b_lst)->prev;
+	}
 	printf("rr%c\n", c);
 }

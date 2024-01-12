@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:34:34 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/11 10:18:06 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/12 10:31:43 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	swap_pos(int *x, int *y)
 {
-	int temp;
-	
+	int	temp;
+
 	temp = *x;
 	*x = *y;
 	*y = temp;
@@ -23,10 +23,10 @@ static void	swap_pos(int *x, int *y)
 
 static int	partition(int *arr, int low, int high)
 {
-	int pivot;
+	int	pivot;
 	int	i;
 	int	j;
-	
+
 	pivot = arr[high];
 	i = low;
 	j = low;
@@ -46,7 +46,7 @@ static int	partition(int *arr, int low, int high)
 static void	quicksort_recursion(int *arr, int low, int high)
 {
 	int	pi;
-	
+
 	pi = 0;
 	if (low < high)
 	{
@@ -56,10 +56,10 @@ static void	quicksort_recursion(int *arr, int low, int high)
 	}
 }
 
-void quick_sort(int *arr, int count)
+void	quick_sort(int *arr, int count)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	quicksort_recursion(arr, 0, count - 1);
 }

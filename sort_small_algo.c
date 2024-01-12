@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 12:11:14 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2023/12/28 13:05:29 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/12 10:20:46 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,25 @@
 
 void	sort_three(t_stack **a)
 {
+	t_stack	*b;
+
+	b = NULL;
 	if ((*a)->data > (*a)->next->data && (*a)->data < (*a)->prev->data)
 		swap(&(*a), 'a');
 	else if ((*a)->data > (*a)->next->data \
 	&& (*a)->next->data < (*a)->prev->data)
-		rotate(&(*a), 'a');
+		rotate(&(*a), &b, 'a');
 	else if ((*a)->data > (*a)->next->data)
 	{
 		swap(&(*a), 'a');
-		reverse_rotate(&(*a), 'a');
+		reverse_rotate(&(*a), &b, 'a');
 	}
 	else if ((*a)->data > (*a)->prev->data)
-		reverse_rotate(&(*a), 'a');
+		reverse_rotate(&(*a), &b, 'a');
 	else if ((*a)->next->data > (*a)->prev->data)
 	{
 		swap(&(*a), 'a');
-		rotate(&(*a), 'a');
+		rotate(&(*a), &b, 'a');
 	}
 	return ;
 }
@@ -38,7 +41,9 @@ void	rotate_back(t_stack **a, int count, int min)
 {
 	int		i;
 	t_stack	*temp;
+	t_stack	*b;
 
+	b = NULL;
 	i = 0;
 	temp = (*a);
 	while (temp->data != min)
@@ -49,9 +54,9 @@ void	rotate_back(t_stack **a, int count, int min)
 	while ((*a)->data != min)
 	{
 		if (i < count / 2)
-			rotate(&(*a), 'a');
+			rotate(&(*a), &b, 'a');
 		else
-			reverse_rotate(&(*a), 'a');
+			reverse_rotate(&(*a), &b, 'a');
 	}
 }
 
@@ -77,7 +82,7 @@ void	sort_rest(t_stack **a, t_stack *b, int count)
 		else if (b->data < (*a)->data && b->data > (*a)->prev->data)
 			push(&b, &(*a), 'a');
 		else
-			rotate(&(*a), 'a');
+			rotate(&(*a), &b, 'a');
 	}
 	rotate_back(&(*a), count, min);
 }
