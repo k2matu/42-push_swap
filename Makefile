@@ -6,7 +6,7 @@
 #    By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/08 18:16:05 by kmatjuhi          #+#    #+#              #
-#    Updated: 2024/01/10 10:04:57 by kmatjuhi         ###   ########.fr        #
+#    Updated: 2024/01/12 15:32:50 by kmatjuhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ LIBFT	=	libft/libft.a
 NAME	=	push_swap
 
 SRCS	=	push_swap.c list_utiles.c stoi.c operations.c algo.c \
-			sort_small_algo.c sort_big_algo.c lis.c quick_sort.c
+			sort_small_algo.c sort_big_algo.c lis.c quick_sort.c \
+			cheapest_number.c check_sorted.c print_stack.c rotate_a_back.c
 
 OFILES	=	$(SRCS:.c=.o)
 

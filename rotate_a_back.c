@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   rotate_a_back.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/08 13:32:30 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/12 15:27:26 by kmatjuhi         ###   ########.fr       */
+/*   Created: 2024/01/12 15:31:02 by kmatjuhi          #+#    #+#             */
+/*   Updated: 2024/01/12 15:31:42 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void	rotate_a_back(t_stack **a, int count, int min)
 {
-	t_stack	*a;
-	t_stack	*next;
+	int		i;
+	t_stack	*temp;
+	t_stack	*b;
 
-	if (argc < 2)
-		return (0);
-	a = stoi(argc, argv);
-	if (!a)
+	b = NULL;
+	i = 0;
+	temp = (*a);
+	while (temp->data != min)
 	{
-		write(2, "Error\n", 7);
-		return (-1);
+		i++;
+		temp = temp->next;
 	}
-	algo(&a);
-	free_stack(&a);
-	return (0);
+	while ((*a)->data != min)
+	{
+		if (i < count / 2)
+			rotate(&(*a), &b, 'a');
+		else
+			reverse_rotate(&(*a), &b, 'a');
+	}
 }

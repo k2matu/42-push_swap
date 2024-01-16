@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   check_sorted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/08 13:32:30 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/12 15:27:26 by kmatjuhi         ###   ########.fr       */
+/*   Created: 2024/01/12 15:21:35 by kmatjuhi          #+#    #+#             */
+/*   Updated: 2024/01/16 20:52:01 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+int	check_sorted(t_stack **a)
 {
-	t_stack	*a;
-	t_stack	*next;
+	t_stack	*temp;
+	int		i;
 
-	if (argc < 2)
-		return (0);
-	a = stoi(argc, argv);
-	if (!a)
+	i = 1;
+	temp = *a;
+	while (temp->data < temp->next->data)
 	{
-		write(2, "Error\n", 7);
-		return (-1);
+		i++;
+		temp = temp->next;
 	}
-	algo(&a);
-	free_stack(&a);
-	return (0);
+	return (i);
 }

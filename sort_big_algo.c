@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:50:16 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/12 11:40:13 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/12 13:59:08 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ void	sort_big(t_stack **a, int count)
 	free(arr);
 	push_to_stack_b(l, &(*a), &b, count);
 	free(l);
+	cheapest_number(&(*a), &b);
 	print(*a);
 	print(b);
 	free_stack(&b);

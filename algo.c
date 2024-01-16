@@ -6,33 +6,18 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 12:31:21 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/12 10:34:25 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/15 11:38:09 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	check(t_stack **a)
-{
-	int		i;
-	t_stack	*temp;
-
-	i = 1;
-	temp = *a;
-	while (temp->data < temp->next->data)
-	{
-		i++;
-		temp = temp->next;
-	}
-	return (i);
-}
 
 void	algo(t_stack **a)
 {
 	int	count;
 
 	count = count_nodes(*a);
-	if (check(a) == count)
+	if (check_sorted(a) == count)
 		return ;
 	if (count < 3)
 		swap(&(*a), 'a');

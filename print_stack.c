@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   print_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/08 13:32:30 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/12 15:27:26 by kmatjuhi         ###   ########.fr       */
+/*   Created: 2024/01/12 15:27:29 by kmatjuhi          #+#    #+#             */
+/*   Updated: 2024/01/12 15:27:38 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void	print(t_stack *stack)
 {
-	t_stack	*a;
-	t_stack	*next;
+	t_stack	*temp;
 
-	if (argc < 2)
-		return (0);
-	a = stoi(argc, argv);
-	if (!a)
+	temp = stack;
+	if (temp == NULL)
 	{
-		write(2, "Error\n", 7);
-		return (-1);
+		printf("empty stack\n");
+		return ;
 	}
-	algo(&a);
-	free_stack(&a);
-	return (0);
+	printf("[%d] = %ld\n", stack->pos, stack->data);
+	stack = stack->next;
+	while (temp != stack)
+	{
+		printf("[%d] = %ld\n", stack->pos, stack->data);
+		stack = stack->next;
+	}
+	printf("\n");
 }

@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 12:11:14 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/12 10:20:46 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/15 11:39:46 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,30 +37,7 @@ void	sort_three(t_stack **a)
 	return ;
 }
 
-void	rotate_back(t_stack **a, int count, int min)
-{
-	int		i;
-	t_stack	*temp;
-	t_stack	*b;
-
-	b = NULL;
-	i = 0;
-	temp = (*a);
-	while (temp->data != min)
-	{
-		i++;
-		temp = temp->next;
-	}
-	while ((*a)->data != min)
-	{
-		if (i < count / 2)
-			rotate(&(*a), &b, 'a');
-		else
-			reverse_rotate(&(*a), &b, 'a');
-	}
-}
-
-void	sort_rest(t_stack **a, t_stack *b, int count)
+static void	sort_rest(t_stack **a, t_stack *b, int count)
 {
 	long	min;
 	long	max;
@@ -84,7 +61,7 @@ void	sort_rest(t_stack **a, t_stack *b, int count)
 		else
 			rotate(&(*a), &b, 'a');
 	}
-	rotate_back(&(*a), count, min);
+	rotate_a_back(&(*a), count, min);
 }
 
 void	sort_five(t_stack **a, int count)
