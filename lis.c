@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 12:48:12 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/09 12:32:20 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/16 20:57:31 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ static int	*create_lis(int *t, int *arr, int max, int i)
 
 static int	*fill_t(int len)
 {
-	int	i;
 	int	*t;
+	int	i;
 
 	i = -1;
 	t = (int *)malloc(sizeof(int) * len);
@@ -46,10 +46,10 @@ static int	*fill_t(int len)
 int	*get_lis(int *arr, int len)
 {
 	int	*t;
+	int	*lis;
 	int	i;
 	int	j;
 	int	max;
-	int	*lis;
 
 	max = 1;
 	i = 0;
