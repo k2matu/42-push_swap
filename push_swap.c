@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 13:32:30 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/16 21:02:58 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/16 21:05:09 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	algo(t_stack **a)
 		sort_five(&(*a), count);
 	else
 		sort_big(&(*a), count);
-	// print(*a);
 }
 
 void	rotate_a_back(t_stack **a, int count, int min)

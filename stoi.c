@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 09:43:24 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/16 20:49:04 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/16 21:06:13 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	error_check(t_stack *stack, char *str, long n)
 
 void	free_arr(char **value)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (value[i])
