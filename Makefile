@@ -6,7 +6,7 @@
 #    By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/08 18:16:05 by kmatjuhi          #+#    #+#              #
-#    Updated: 2024/01/16 21:01:36 by kmatjuhi         ###   ########.fr        #
+#    Updated: 2024/01/17 10:47:46 by kmatjuhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ NAME	=	push_swap
 
 SRCS	=	push_swap.c list_utiles.c stoi.c operations.c \
 			sort_small_algo.c sort_big_algo.c lis.c quick_sort.c \
-			cheapest_number.c check_sorted.c REMOVE_print_stack.c
+			cheapest_number.c check_sorted.c REMOVE_print_stack.c \
+			push_back.c
 
 OFILES	=	$(SRCS:.c=.o)
 

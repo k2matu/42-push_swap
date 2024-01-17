@@ -6,20 +6,17 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 13:50:46 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/12 10:15:26 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/17 08:56:48 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack **lst, char c)
+static void	swap_second(t_stack **lst)
 {
 	t_stack	*first;
 	t_stack	*second;
-
-	if (*lst == NULL || (*lst)->next == *lst)
-		return ;
-	printf("s%c\n", c);
+	
 	if ((*lst)->next->next == *lst)
 	{
 		*lst = (*lst)->next;
@@ -34,6 +31,23 @@ void	swap(t_stack **lst, char c)
 	second->next = first;
 	second->prev->next = second;
 	*lst = second;
+}
+
+void	swap(t_stack **a_lst, t_stack **b_lst, char c)
+{
+	if (c == 'a' || c == 's')
+	{
+		if (!(*a_lst) || (*a_lst)->next == *a_lst)
+			return ;
+		swap_second(a_lst);
+	}
+	if (c == 'b' || c == 's')
+	{
+		if (!(*b_lst) || (*b_lst)->next == *b_lst)
+			return ;
+		swap_second(b_lst);
+	}
+	printf("s%c\n", c);
 }
 
 void	push(t_stack **src, t_stack **dest, char c)

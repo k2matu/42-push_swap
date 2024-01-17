@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:50:16 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/12 13:59:08 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:15:52 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	*lst_to_arr(t_stack **a, int count)
 {
+	t_stack	*temp;
 	int		*arr;
 	int		i;
-	t_stack	*temp;
 
 	i = 0;
 	temp = *a;
@@ -53,7 +53,7 @@ void	fill_stack_pos(t_stack **a, int *arr, int count)
 	}
 }
 
-void	push_to_stack_b(int *l, t_stack **a, t_stack **b, int count)
+void	push_to_stack_b(int *lis, t_stack **a, t_stack **b, int count)
 {
 	int	i;
 	int	j;
@@ -62,7 +62,7 @@ void	push_to_stack_b(int *l, t_stack **a, t_stack **b, int count)
 	j = 0;
 	while (i < count)
 	{
-		if (l[j] == (*a)->data)
+		if (lis[j] == (*a)->data)
 		{
 			rotate(&(*a), &(*b), 'a');
 			j++;
@@ -75,20 +75,27 @@ void	push_to_stack_b(int *l, t_stack **a, t_stack **b, int count)
 
 void	sort_big(t_stack **a, int count)
 {
-	int		*l;
-	int		*arr;
 	t_stack	*b;
+	int		*lis;
+	int		*arr;
+	int		min_pos;
 
 	b = NULL;
 	arr = lst_to_arr(a, count);
-	l = get_lis(arr, count);
+	lis = get_lis(arr, count);
 	quick_sort(arr, count);
 	fill_stack_pos(&(*a), arr, count);
 	free(arr);
-	push_to_stack_b(l, &(*a), &b, count);
-	free(l);
-	cheapest_number(&(*a), &b);
+	push_to_stack_b(lis, &(*a), &b, count);
+	free(lis);
 	print(*a);
 	print(b);
-	free_stack(&b);
+	while (b)
+	{
+	// inside a while b loop. do this until b stack is empty.
+		min_pos = cheapest_number(&(*a), &b);
+		push_back(&(*a), &b, min_pos);
+	}
+	rotate_a_back(&*a, count_nodes(*a));
+	print(*a);
 }

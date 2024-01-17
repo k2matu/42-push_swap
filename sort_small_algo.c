@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 12:11:14 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/15 11:39:46 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/17 08:53:48 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@ void	sort_three(t_stack **a)
 
 	b = NULL;
 	if ((*a)->data > (*a)->next->data && (*a)->data < (*a)->prev->data)
-		swap(&(*a), 'a');
+		swap(&(*a), &b, 'a');
 	else if ((*a)->data > (*a)->next->data \
 	&& (*a)->next->data < (*a)->prev->data)
 		rotate(&(*a), &b, 'a');
 	else if ((*a)->data > (*a)->next->data)
 	{
-		swap(&(*a), 'a');
+		swap(&(*a), &b, 'a');
 		reverse_rotate(&(*a), &b, 'a');
 	}
 	else if ((*a)->data > (*a)->prev->data)
 		reverse_rotate(&(*a), &b, 'a');
 	else if ((*a)->next->data > (*a)->prev->data)
 	{
-		swap(&(*a), 'a');
+		swap(&(*a), &b, 'a');
 		rotate(&(*a), &b, 'a');
 	}
 	return ;

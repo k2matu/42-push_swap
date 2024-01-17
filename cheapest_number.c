@@ -6,13 +6,13 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:42:54 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/16 19:28:24 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:18:03 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	find_min_pos(t_stack **a, int size)
+int	find_min_pos(t_stack **a, int size)
 {
 	t_stack	*temp;
 	int		min;
@@ -31,7 +31,7 @@ static int	find_min_pos(t_stack **a, int size)
 	return (min);
 }
 
-static int	count_b_moves(t_stack **b, int pos)
+int	count_b_moves(t_stack **b, int pos)
 {
 	t_stack	*temp;
 	int		i;
@@ -50,7 +50,7 @@ static int	count_b_moves(t_stack **b, int pos)
 	return (i);
 }
 
-static int	count_a_moves(t_stack **a, int pos)
+int	count_a_moves(t_stack **a, int pos)
 {
 	t_stack	*temp;
 	int		i;
@@ -65,7 +65,8 @@ static int	count_a_moves(t_stack **a, int pos)
 		i++;
 		temp = temp->next;
 	}
-	if (i == 0 || i == size)
+	// printf("i is %d\n", i);
+	if (i == size)
 	{
 		i = 0;
 		min = find_min_pos(a, size);
@@ -80,35 +81,45 @@ static int	count_a_moves(t_stack **a, int pos)
 	return (i);
 }
 
-static int	moves(t_stack **a, t_stack **b, int pos)
+static int	count_moves(t_stack **a, t_stack **b, int pos)
 {
 	int	a_moves;
 	int	b_moves;
+	int	moves;
 
 	a_moves = count_a_moves(a, pos);
 	b_moves = count_b_moves(b, pos);
-	printf("a: %d, and b: %d\n", a_moves, b_moves);
-	return (0);	
+	// printf("a: %d, and b: %d\n", a_moves, b_moves);
+	if (a_moves == b_moves)
+		moves = a_moves;
+	else
+		moves = a_moves - b_moves;
+	if (moves < 0)
+		moves *= -1;
+	return (moves);
 }
 
 int	cheapest_number(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;
-	int		i;
+	int		moves;
+	int		min_moves;
+	int		min_pos;
 	int		count;
 
-	i = 0;
 	count = count_nodes(*b);
+	min_moves = 600;
 	temp = *b;
-	while (i < count)
+	while (count--)
 	{
-		moves(a, b, 9);
-		// send temp into to find cheapeast number in b stack and a stack;
-		i++;
+		moves = count_moves(a, b, temp->pos);
+		if (moves < min_moves)
+		{
+			min_moves = moves;
+			min_pos = temp->pos;
+		}
+		temp = temp->next;
 	}
-	// go through *b stack every time to count the cheapest move
-	// count cheapest move from *b stack to the top and sum it with moves from a stack. and save it (save moves and pos number	
-	
-	// return cheapest number;
-	return (0);
+	printf("%d is pos %d\n", min_moves, min_pos);
+	return (min_pos);
 }

@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 13:32:30 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/16 21:05:09 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:13:54 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 void	algo(t_stack **a)
 {
-	int	count;
+	t_stack	*b;
+	int		count;
 
+	b = NULL;
 	count = count_nodes(*a);
 	if (check_sorted(a) == count)
 		return ;
 	if (count < 3)
-		swap(&(*a), 'a');
+		swap(&(*a), &b, 'a');
 	else if (count == 3)
 		sort_three(&(*a));
 	else if (count < 6)
@@ -29,7 +31,7 @@ void	algo(t_stack **a)
 		sort_big(&(*a), count);
 }
 
-void	rotate_a_back(t_stack **a, int count, int min)
+void	rotate_a_back(t_stack **a, int count)
 {
 	t_stack	*temp;
 	t_stack	*b;
@@ -38,12 +40,12 @@ void	rotate_a_back(t_stack **a, int count, int min)
 	b = NULL;
 	i = 0;
 	temp = (*a);
-	while (temp->data != min)
+	while (temp->pos != 0)
 	{
 		i++;
 		temp = temp->next;
 	}
-	while ((*a)->data != min)
+	while ((*a)->pos != 0)
 	{
 		if (i < count / 2)
 			rotate(&(*a), &b, 'a');
@@ -66,6 +68,7 @@ int	main(int argc, char *argv[])
 		return (-1);
 	}
 	algo(&a);
+	// print(a);
 	free_stack(&a);
 	return (0);
 }
