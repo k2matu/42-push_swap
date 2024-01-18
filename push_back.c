@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 10:47:55 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 13:43:32 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:07:33 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void push_back(t_stack **a, t_stack **b, int pos)
 	int i;
 
 	i = 0;
+	printf("________________________________________________________________________________\n");
 	a_moves = count_a_moves(a, pos);
 	b_moves = count_b_moves(b, pos);
 	if (a_moves >= 0 && b_moves >= 0)
@@ -78,4 +79,9 @@ void push_back(t_stack **a, t_stack **b, int pos)
 	}
 	if (a_moves == 0 && b_moves == 0)
 		push(&*b, &*a, 'a');
+
+	printf("a list\n");
+	print(*a);
+	printf("\nb list\n");
+	print(*b);
 }

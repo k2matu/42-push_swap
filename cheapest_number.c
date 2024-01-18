@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:42:54 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 13:44:33 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:52:09 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int	count_a_moves(t_stack **a, int pos)
 {
 	t_stack	*temp;
 	int		i;
+	int		j;
 	int		min;
 	int		size;
 
@@ -65,19 +66,11 @@ int	count_a_moves(t_stack **a, int pos)
 		i++;
 		temp = temp->next;
 	}
-	// if (i == 0 && pos < temp->pos)
-	// {
-	// 	while (pos < temp->pos)
-	// 	{
-	// 		i--;
-	// 		temp = temp->prev;
-	// 	}
-	// 	return (i + 1);
-	// }
+	min = find_min_pos(a, size);
 	if (i == size)
 	{
+		j = i;
 		i = 0;
-		min = find_min_pos(a, size);
 		while (temp->pos != min)
 		{
 			i++;
@@ -127,5 +120,6 @@ int	cheapest_number(t_stack **a, t_stack **b)
 		}
 		temp = temp->next;
 	}
+	printf("cheapest numbpos %d, and moves %d\n", min_pos,  min_moves);
 	return (min_pos);
 }

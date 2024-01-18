@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:27:29 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 10:59:10 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:48:56 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,4 @@ void	print(t_stack *stack)
 		printf("[%d] = %ld\n", stack->pos, stack->data);
 		stack = stack->next;
 	}
-	printf("done printing list\n");
 }
