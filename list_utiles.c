@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 09:02:45 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 10:49:16 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:45:54 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	add_front(t_stack **lst, t_stack *new)
 	tail->next = new;
 	head->prev = new;
 	*lst = new;
-	printf("exiting addfront\n");
 }
 
 void	add_back(t_stack **lst, t_stack *new)

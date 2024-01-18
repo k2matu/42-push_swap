@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 12:11:14 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/17 08:53:48 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:23:32 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void	sort_rest(t_stack **a, t_stack *b, int count)
 		else
 			rotate(&(*a), &b, 'a');
 	}
-	rotate_a_back(&(*a), count, min);
+	rotate_a_back(&(*a), count);
 }
 
 void	sort_five(t_stack **a, int count)

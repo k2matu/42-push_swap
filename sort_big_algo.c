@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:50:16 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 11:07:08 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:44:03 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ void	sort_big(t_stack **a, int count)
 	free(arr);
 	push_to_stack_b(lis, &(*a), &b, count);
 	free(lis);
-	printf("printed b");
 	while (b)
 	{
 		min_pos = cheapest_number(&(*a), &b);

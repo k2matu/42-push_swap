@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 13:32:30 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 11:02:09 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:45:41 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	main(int argc, char *argv[])
 		return (-1);
 	}
 	algo(&a);
-	// print(a);
+	print(a);
 	free_stack(&a);
 	return (0);
 }

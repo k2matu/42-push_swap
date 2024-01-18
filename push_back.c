@@ -6,15 +6,11 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 10:47:55 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/17 14:16:48 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:43:32 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-void double_rotate(t_stack **a, t_stack **b, int pos)
-{
-	
-}
 
 void push_back(t_stack **a, t_stack **b, int pos)
 {
@@ -26,8 +22,6 @@ void push_back(t_stack **a, t_stack **b, int pos)
 	i = 0;
 	a_moves = count_a_moves(a, pos);
 	b_moves = count_b_moves(b, pos);
-	// printf("pos %d, a: %d, and b: %d\n", pos, a_moves, b_moves);
-	// if both are positive (rr)
 	if (a_moves >= 0 && b_moves >= 0)
 	{
 		if (a_moves > b_moves)
@@ -84,10 +78,4 @@ void push_back(t_stack **a, t_stack **b, int pos)
 	}
 	if (a_moves == 0 && b_moves == 0)
 		push(&*b, &*a, 'a');
-	print(*a);
-	print(*b);
-	// printf("pos %d, a: %d, and b: %d\n", pos, a_moves, b_moves);
-	// if both are negative (rrr)
-
-	// else, rotate however necessary by the a_moves and b_moves
 }

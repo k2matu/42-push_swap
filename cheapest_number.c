@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:42:54 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 09:31:14 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:44:33 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,15 +65,15 @@ int	count_a_moves(t_stack **a, int pos)
 		i++;
 		temp = temp->next;
 	}
-	if (i == 0 && pos < temp->pos)
-	{
-		while (pos < temp->pos)
-		{
-			i--;
-			temp = temp->prev;
-		}
-		return (i + 1);
-	}
+	// if (i == 0 && pos < temp->pos)
+	// {
+	// 	while (pos < temp->pos)
+	// 	{
+	// 		i--;
+	// 		temp = temp->prev;
+	// 	}
+	// 	return (i + 1);
+	// }
 	if (i == size)
 	{
 		i = 0;
@@ -97,7 +97,6 @@ static int	count_moves(t_stack **a, t_stack **b, int pos)
 
 	a_moves = count_a_moves(a, pos);
 	b_moves = count_b_moves(b, pos);
-	// printf("a: %d, and b: %d\n", a_moves, b_moves);
 	if (a_moves == b_moves)
 		moves = a_moves;
 	else
@@ -128,6 +127,5 @@ int	cheapest_number(t_stack **a, t_stack **b)
 		}
 		temp = temp->next;
 	}
-	printf("%d is pos %d\n", min_moves, min_pos);
 	return (min_pos);
 }
