@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:50:16 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 13:44:03 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/18 19:26:21 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,16 +81,27 @@ void	sort_big(t_stack **a, int count)
 
 	b = NULL;
 	arr = lst_to_arr(a, count);
-	lis = get_lis(arr, count);
 	quick_sort(arr, count);
 	fill_stack_pos(&(*a), arr, count);
+	if (count < 6)
+	{
+		if (count == 5)
+			push(&(*a), &b, 'b');
+		push(&(*a), &b, 'b');
+		sort_three(&(*a));
+	}
+	if (count > 5)
+	{
+		lis = get_lis(arr, count);
+		push_to_stack_b(lis, &(*a), &b, count);
+		free(lis);
+	}
 	free(arr);
-	push_to_stack_b(lis, &(*a), &b, count);
-	free(lis);
 	while (b)
 	{
 		min_pos = cheapest_number(&(*a), &b);
 		push_back(&(*a), &b, min_pos);
 	}
 	rotate_a_back(&*a, count_nodes(*a));
+	// print(*a);
 }

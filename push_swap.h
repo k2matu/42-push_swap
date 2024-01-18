@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 13:32:33 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/17 14:13:27 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/18 19:21:57 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void		push(t_stack **src, t_stack **dest, char c);
 void		rotate(t_stack **a_lst, t_stack **b_lst, char c);
 void		reverse_rotate(t_stack **a_lst, t_stack **b_lst, char c);
 void		sort_three(t_stack **a);
-void		sort_five(t_stack **a, int count);
 void		rotate_a_back(t_stack **a, int count);
 void		sort_big(t_stack **a, int count);
 void		print(t_stack *stack);

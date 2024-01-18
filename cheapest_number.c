@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:42:54 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 14:52:09 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:46:35 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,16 @@ int	count_a_moves(t_stack **a, int pos)
 		temp = temp->next;
 	}
 	min = find_min_pos(a, size);
-	if (i == size)
+	if (i == 0 && pos > min)
+	{
+		while (temp->pos > pos)
+		{
+			i--;
+			temp = temp->prev;
+		}
+		i = i + 1;
+	}
+	if (i == size || i == 0 && pos < min)
 	{
 		j = i;
 		i = 0;
@@ -92,8 +101,15 @@ static int	count_moves(t_stack **a, t_stack **b, int pos)
 	b_moves = count_b_moves(b, pos);
 	if (a_moves == b_moves)
 		moves = a_moves;
+	else if (a_moves > 0 && b_moves > 0 || a_moves < 0 && b_moves < 0)
+	{
+		if ((a_moves > b_moves && a_moves > 0) || (a_moves < b_moves && a_moves < 0))
+			moves = a_moves;
+		else
+			moves = b_moves;
+	}	
 	else
-		moves = a_moves - b_moves;
+		moves = (b_moves - a_moves);
 	if (moves < 0)
 		moves *= -1;
 	return (moves);
@@ -120,6 +136,5 @@ int	cheapest_number(t_stack **a, t_stack **b)
 		}
 		temp = temp->next;
 	}
-	printf("cheapest numbpos %d, and moves %d\n", min_pos,  min_moves);
 	return (min_pos);
 }

@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 12:11:14 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 13:23:32 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/18 19:06:36 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,43 +35,4 @@ void	sort_three(t_stack **a)
 		rotate(&(*a), &b, 'a');
 	}
 	return ;
-}
-
-static void	sort_rest(t_stack **a, t_stack *b, int count)
-{
-	long	min;
-	long	max;
-
-	min = (*a)->data;
-	max = (*a)->prev->data;
-	while (b != NULL)
-	{
-		if (b->data < min && (*a)->data == min && (*a)->prev->data == max)
-		{
-			push(&b, &(*a), 'a');
-			min = (*a)->data;
-		}
-		else if (b->data > max && (*a)->data == min && (*a)->prev->data == max)
-		{
-			push(&b, &(*a), 'a');
-			max = (*a)->data;
-		}
-		else if (b->data < (*a)->data && b->data > (*a)->prev->data)
-			push(&b, &(*a), 'a');
-		else
-			rotate(&(*a), &b, 'a');
-	}
-	rotate_a_back(&(*a), count);
-}
-
-void	sort_five(t_stack **a, int count)
-{
-	t_stack	*b;
-
-	b = NULL;
-	if (count == 5)
-		push(&(*a), &b, 'b');
-	push(&(*a), &b, 'b');
-	sort_three(&(*a));
-	sort_rest(&(*a), b, count);
 }
