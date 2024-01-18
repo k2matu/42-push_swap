@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:50:16 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/17 14:15:52 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/18 11:07:08 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	push_to_stack_b(int *lis, t_stack **a, t_stack **b, int count)
 
 	i = 0;
 	j = 0;
-	while (i < count)
+	while (i++ < count)
 	{
 		if (lis[j] == (*a)->data)
 		{
@@ -69,7 +69,6 @@ void	push_to_stack_b(int *lis, t_stack **a, t_stack **b, int count)
 		}
 		else
 			push(&(*a), &(*b), 'b');
-		i++;
 	}
 }
 
@@ -88,14 +87,11 @@ void	sort_big(t_stack **a, int count)
 	free(arr);
 	push_to_stack_b(lis, &(*a), &b, count);
 	free(lis);
-	print(*a);
-	print(b);
+	printf("printed b");
 	while (b)
 	{
-	// inside a while b loop. do this until b stack is empty.
 		min_pos = cheapest_number(&(*a), &b);
 		push_back(&(*a), &b, min_pos);
 	}
 	rotate_a_back(&*a, count_nodes(*a));
-	print(*a);
 }

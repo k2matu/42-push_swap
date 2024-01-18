@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:42:54 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/17 14:49:52 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/18 09:31:14 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,16 @@ int	count_a_moves(t_stack **a, int pos)
 		i++;
 		temp = temp->next;
 	}
-	if (i == size) 
+	if (i == 0 && pos < temp->pos)
+	{
+		while (pos < temp->pos)
+		{
+			i--;
+			temp = temp->prev;
+		}
+		return (i + 1);
+	}
+	if (i == size)
 	{
 		i = 0;
 		min = find_min_pos(a, size);

@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 13:50:46 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/17 08:56:48 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/18 11:10:48 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	swap_second(t_stack **lst)
 {
 	t_stack	*first;
 	t_stack	*second;
-	
+
 	if ((*lst)->next->next == *lst)
 	{
 		*lst = (*lst)->next;
