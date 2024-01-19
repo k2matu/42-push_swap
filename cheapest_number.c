@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:42:54 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/19 03:01:52 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/19 03:11:25 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int	count_a_moves(t_stack **a, int pos)
 		}
 		i = i + 1;
 	}
-	if (i == size || i == 0 && pos < min)
+	if (i == size || i == 0 && pos < min || i == 0 && pos > max)
 	{
 		j = i;
 		i = 0;
