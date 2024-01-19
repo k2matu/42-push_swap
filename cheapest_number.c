@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:42:54 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/19 04:11:09 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/19 04:20:31 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,11 +122,12 @@ static int	count_moves(t_stack **a, t_stack **b, int pos)
 		moves = a_moves;
 	else if ((a_moves > 0 && b_moves > 0) || (a_moves < 0 && b_moves < 0))
 	{
-		if ((a_moves > b_moves && a_moves > 0) || (a_moves < b_moves && a_moves < 0))
+		if ((a_moves > b_moves && a_moves > 0) || \
+		(a_moves < b_moves && a_moves < 0))
 			moves = a_moves;
 		else
 			moves = b_moves;
-	}	
+	}
 	else
 		moves = (b_moves - a_moves);
 	if (moves < 0)

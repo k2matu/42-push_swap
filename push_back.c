@@ -6,27 +6,22 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 10:47:55 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 20:47:45 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/19 04:19:26 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void push_back(t_stack **a, t_stack **b, int pos)
+void	push_back(t_stack **a, t_stack **b, int pos)
 {
 	int	a_moves;
 	int	b_moves;
 	int	moves;
-	int i;
+	int	i;
 
 	i = 0;
 	a_moves = count_a_moves(a, pos);
 	b_moves = count_b_moves(b, pos);
-	// printf("stack a\n");
-	// print(*a);
-	// printf("stack b\n");
-	// print(*b);
-	// printf("pos[%d] a: %d b: %d moves\n", pos, a_moves, b_moves);
 	if (a_moves >= 0 && b_moves >= 0)
 	{
 		if (a_moves > b_moves)
@@ -83,9 +78,4 @@ void push_back(t_stack **a, t_stack **b, int pos)
 	}
 	if (a_moves == 0 && b_moves == 0)
 		push(&*b, &*a, 'a');
-	
-	// printf("after push\n");	
-	// print(*a);
-	// printf("stack b\n");
-	// print(*b);
 }

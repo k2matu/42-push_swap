@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 13:32:33 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 19:21:57 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/19 04:16:35 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ void		sort_big(t_stack **a, int count);
 void		print(t_stack *stack);
 void		quick_sort(int *arr, int count);
 void		free_arr(char **value);
+void		push_back(t_stack **a, t_stack **b, int pos);
 int			*get_lis(int *arr, int len);
 int			count_nodes(t_stack *stack);
 int			cheapest_number(t_stack **a, t_stack **b);
 int			check_sorted(t_stack **a);
 int			count_a_moves(t_stack **a, int pos);
 int			count_b_moves(t_stack **b, int pos);
-void push_back(t_stack **a, t_stack **b, int pos);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:50:16 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/19 02:31:33 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/19 04:18:42 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	push_to_stack_b(int *lis, t_stack **a, t_stack **b, int count)
 				j++;
 		}
 		else
-				push(&(*a), &(*b), 'b');
+			push(&(*a), &(*b), 'b');
 	}
 }
 
@@ -96,17 +96,9 @@ void	sort_big(t_stack **a, int count)
 	if (count > 5)
 	{
 		lis = get_lis(backup, count);
-		// int i = 0;
-		// printf("lis i is >>>>>>>>>>>>>>>");
-		// while (lis[i])
-		// {
-		// 	printf("%d ", lis[i]);
-		// 	i++;
-		// }
 		push_to_stack_b(lis, &(*a), &b, count);
 		free(lis);
 	}
-	// print(*a);
 	free(arr);
 	while (b)
 	{
@@ -114,5 +106,4 @@ void	sort_big(t_stack **a, int count)
 		push_back(&(*a), &b, min_pos);
 	}
 	rotate_a_back(&*a, count_nodes(*a));
-	// print(*a);
 }
