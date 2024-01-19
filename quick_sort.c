@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:34:34 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/19 04:08:06 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/19 12:18:35 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	partition(int *arr, int low, int high)
 	return (i);
 }
 
-static void	quicksort_recursion(int *arr, int low, int high)
+void	quicksort(int *arr, int low, int high)
 {
 	int	pi;
 
@@ -51,12 +51,7 @@ static void	quicksort_recursion(int *arr, int low, int high)
 	if (low < high)
 	{
 		pi = partition(arr, low, high);
-		quicksort_recursion(arr, low, pi - 1);
-		quicksort_recursion(arr, pi + 1, high);
+		quicksort(arr, low, pi - 1);
+		quicksort(arr, pi + 1, high);
 	}
-}
-
-void	quick_sort(int *arr, int count)
-{
-	quicksort_recursion(arr, 0, count - 1);
 }
