@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:50:16 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/19 04:18:42 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/19 11:25:02 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	push_to_stack_b(int *lis, t_stack **a, t_stack **b, int count)
 {
 	int	i;
 	int	j;
+	int frst_pos;
 
 	i = 0;
 	j = 0;
@@ -64,12 +65,45 @@ void	push_to_stack_b(int *lis, t_stack **a, t_stack **b, int count)
 	{
 		if (lis[j] == (*a)->data)
 		{
+			if (j == 0)
+				frst_pos = (*a)->pos;
 			rotate(&(*a), &(*b), 'a');
 			if (lis[j + 1])
 				j++;
+			else
+				break ;
 		}
 		else
+		{
 			push(&(*a), &(*b), 'b');
+			if ((*b)->pos < (count / 2))
+				rotate(&(*a), &(*b), 'b');
+		}
+	}
+	while (i++ < count)
+	{
+		if ((*a)->pos < frst_pos)
+		{
+			rotate(&(*a), &(*b), 'a');
+			break ;
+		}
+		else
+		{
+			push(&(*a), &(*b), 'b');
+			if ((*b)->pos < (count / 2))
+				rotate(&(*a), &(*b), 'b');
+		}
+	}
+	while (i++ < count)
+	{
+		if ((*a)->pos < frst_pos && (*a)->pos > (*a)->prev->pos)
+			rotate(&(*a), &(*b), 'a');
+		else
+		{
+			push(&(*a), &(*b), 'b');
+			if ((*b)->pos < (count / 2))
+				rotate(&(*a), &(*b), 'b');
+		}
 	}
 }
 
@@ -106,4 +140,6 @@ void	sort_big(t_stack **a, int count)
 		push_back(&(*a), &b, min_pos);
 	}
 	rotate_a_back(&*a, count_nodes(*a));
+	// if (check_sorted(a) == count)
+	// 	printf("STACK SORTED");
 }
