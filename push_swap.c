@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 13:32:30 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 20:48:49 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/19 01:55:35 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	algo(t_stack **a)
 		
 	// if (check_sorted(a) == count)
 	// 	printf("sorted");
+	// printf("%d", check_sorted(a));
+	// print(*a);
 }
 
 void	rotate_a_back(t_stack **a, int count)

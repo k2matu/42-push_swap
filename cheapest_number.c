@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:42:54 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 18:46:35 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/19 03:01:52 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,25 @@ int	find_min_pos(t_stack **a, int size)
 		i++;
 	}
 	return (min);
+}
+
+int	find_max_pos(t_stack **a, int size)
+{
+	t_stack	*temp;
+	int		max;
+	int		i;
+
+	i = 0;
+	temp = *a;
+	max = temp->pos;
+	while (i < size)
+	{
+		if (max < temp->pos)
+			max = temp->pos;
+		temp = temp->next;
+		i++;
+	}
+	return (max);
 }
 
 int	count_b_moves(t_stack **b, int pos)
@@ -56,6 +75,7 @@ int	count_a_moves(t_stack **a, int pos)
 	int		i;
 	int		j;
 	int		min;
+	int		max;
 	int		size;
 
 	i = 0;
@@ -67,6 +87,7 @@ int	count_a_moves(t_stack **a, int pos)
 		temp = temp->next;
 	}
 	min = find_min_pos(a, size);
+	max = find_max_pos(a, size);
 	if (i == 0 && pos > min)
 	{
 		while (temp->pos > pos)
@@ -133,6 +154,8 @@ int	cheapest_number(t_stack **a, t_stack **b)
 		{
 			min_moves = moves;
 			min_pos = temp->pos;
+			if (min_moves < 2)
+				return (min_pos);
 		}
 		temp = temp->next;
 	}

@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:50:16 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 19:26:21 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/19 02:31:33 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,11 @@ void	push_to_stack_b(int *lis, t_stack **a, t_stack **b, int count)
 		if (lis[j] == (*a)->data)
 		{
 			rotate(&(*a), &(*b), 'a');
-			j++;
+			if (lis[j + 1])
+				j++;
 		}
 		else
-			push(&(*a), &(*b), 'b');
+				push(&(*a), &(*b), 'b');
 	}
 }
 
@@ -77,10 +78,12 @@ void	sort_big(t_stack **a, int count)
 	t_stack	*b;
 	int		*lis;
 	int		*arr;
+	int		*backup;
 	int		min_pos;
 
 	b = NULL;
 	arr = lst_to_arr(a, count);
+	backup = lst_to_arr(a, count);
 	quick_sort(arr, count);
 	fill_stack_pos(&(*a), arr, count);
 	if (count < 6)
@@ -92,10 +95,18 @@ void	sort_big(t_stack **a, int count)
 	}
 	if (count > 5)
 	{
-		lis = get_lis(arr, count);
+		lis = get_lis(backup, count);
+		// int i = 0;
+		// printf("lis i is >>>>>>>>>>>>>>>");
+		// while (lis[i])
+		// {
+		// 	printf("%d ", lis[i]);
+		// 	i++;
+		// }
 		push_to_stack_b(lis, &(*a), &b, count);
 		free(lis);
 	}
+	// print(*a);
 	free(arr);
 	while (b)
 	{
