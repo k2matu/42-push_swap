@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 13:32:30 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/19 01:55:35 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/19 04:05:56 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	rotate_a_back(t_stack **a, int count)
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
-	t_stack	*next;
 
 	if (argc < 2)
 		return (0);

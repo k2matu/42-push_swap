@@ -6,7 +6,7 @@
 #    By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/08 18:16:05 by kmatjuhi          #+#    #+#              #
-#    Updated: 2024/01/17 10:47:46 by kmatjuhi         ###   ########.fr        #
+#    Updated: 2024/01/19 04:05:20 by kmatjuhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OFILES	=	$(SRCS:.c=.o)
 
 CC		=	cc
 RM		=	-rm -f
-# CFLAGS	=	-Wall -Werror -Wextra
+CFLAGS	=	-Wall -Werror -Wextra
 
 all: $(NAME)
 

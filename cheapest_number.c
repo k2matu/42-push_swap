@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:42:54 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/19 03:11:25 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/19 04:11:09 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ int	count_a_moves(t_stack **a, int pos)
 {
 	t_stack	*temp;
 	int		i;
-	int		j;
 	int		min;
 	int		max;
 	int		size;
@@ -97,9 +96,8 @@ int	count_a_moves(t_stack **a, int pos)
 		}
 		i = i + 1;
 	}
-	if (i == size || i == 0 && pos < min || i == 0 && pos > max)
+	if (i == size || (i == 0 && pos < min) || (i == 0 && pos > max))
 	{
-		j = i;
 		i = 0;
 		while (temp->pos != min)
 		{
@@ -122,7 +120,7 @@ static int	count_moves(t_stack **a, t_stack **b, int pos)
 	b_moves = count_b_moves(b, pos);
 	if (a_moves == b_moves)
 		moves = a_moves;
-	else if (a_moves > 0 && b_moves > 0 || a_moves < 0 && b_moves < 0)
+	else if ((a_moves > 0 && b_moves > 0) || (a_moves < 0 && b_moves < 0))
 	{
 		if ((a_moves > b_moves && a_moves > 0) || (a_moves < b_moves && a_moves < 0))
 			moves = a_moves;

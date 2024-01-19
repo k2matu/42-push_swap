@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:34:34 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/12 10:31:43 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/19 04:08:06 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,5 @@ static void	quicksort_recursion(int *arr, int low, int high)
 
 void	quick_sort(int *arr, int count)
 {
-	int	i;
-
-	i = 0;
 	quicksort_recursion(arr, 0, count - 1);
 }
