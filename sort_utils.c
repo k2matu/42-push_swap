@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_utilities.c                                   :+:      :+:    :+:   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:50:16 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/20 13:15:50 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/20 19:52:10 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	fill_stack_pos(t_stack **a, int *arr, int count)
 	}
 }
 
-void	push_stack_b_scnd(t_stack **a, t_stack **b, int count, int frst_pos)
+static void	push_stack_b_scnd(t_stack **a, t_stack **b, int count, int frst_pos)
 {
 	int	j;
 

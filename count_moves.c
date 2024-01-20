@@ -6,13 +6,13 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 12:46:27 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/19 15:06:13 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/20 19:49:22 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_min_pos(t_stack **a, int size)
+static int	find_min_pos(t_stack **a, int size)
 {
 	t_stack	*temp;
 	int		min;
@@ -50,7 +50,7 @@ int	count_b_moves(t_stack **b, int pos)
 	return (i);
 }
 
-int	count_a_moves_second(t_stack **a, t_stack *temp, int i, int pos)
+static int	count_a_moves_second(t_stack **a, t_stack *temp, int i, int pos)
 {
 	int		min;
 	int		size;

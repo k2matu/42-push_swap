@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 09:35:59 by kale              #+#    #+#             */
-/*   Updated: 2024/01/20 18:16:50 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/20 19:43:39 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-// # include "get_next_line.h"
+# include "GNL/get_next_line.h"
 # include "ft_printf/ft_printf.h"
 
 typedef struct s_list
@@ -54,7 +54,7 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 char	**ft_split(char const *s, char c);
-char	*ft_strchr(const char *str, int c);
+char	*ft_strchr(char *str, int c);
 char	*ft_strdup(const char *s1);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(char const *s1, char const *s2);

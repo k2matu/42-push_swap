@@ -6,13 +6,13 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 13:32:30 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/20 13:03:44 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/20 19:51:38 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_stack(t_stack **a, int count)
+statiic void	reverse_stack(t_stack **a, int count)
 {
 	t_stack	*temp;
 	t_stack	*b;
@@ -35,7 +35,7 @@ void	reverse_stack(t_stack **a, int count)
 	}
 }
 
-void	sort_small(t_stack **a, t_stack **b, int count)
+static void	sort_small(t_stack **a, t_stack **b, int count)
 {
 	if (count < 3)
 	{
@@ -62,7 +62,7 @@ void	sort_small(t_stack **a, t_stack **b, int count)
 	return ;
 }
 
-void	sort_big_scnd(t_stack **a, int *arr, int count)
+static void	sort_big_scnd(t_stack **a, int *arr, int count)
 {
 	t_stack	*b;
 	int		*lis;
@@ -90,7 +90,7 @@ void	sort_big_scnd(t_stack **a, int *arr, int count)
 	reverse_stack(&*a, count_nodes(*a));
 }
 
-void	sort_big(t_stack **a, int count)
+static void	sort_big(t_stack **a, int count)
 {
 	int		*arr;
 	int		*xtra;
