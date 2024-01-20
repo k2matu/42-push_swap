@@ -6,13 +6,13 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 13:32:30 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/20 19:51:38 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/20 19:57:33 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-statiic void	reverse_stack(t_stack **a, int count)
+static void	reverse_stack(t_stack **a, int count)
 {
 	t_stack	*temp;
 	t_stack	*b;
