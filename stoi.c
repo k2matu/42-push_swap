@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 09:43:24 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/16 21:06:13 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/20 12:33:15 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,6 @@ static int	error_check(t_stack *stack, char *str, long n)
 	return (0);
 }
 
-void	free_arr(char **value)
-{
-	int	i;
-
-	i = 0;
-	while (value[i])
-		free(value[i++]);
-	free(value);
-}
-
 static t_stack	*get_numbers(char **value, int i)
 {
 	t_stack	*head;
@@ -68,7 +58,7 @@ static t_stack	*get_numbers(char **value, int i)
 		add_back(&head, new);
 	}
 	if (j == 0)
-		free_arr(value);
+		ft_free_arr(value);
 	return (head);
 }
 
