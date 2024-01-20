@@ -6,13 +6,13 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 13:32:30 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/19 19:37:31 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/20 08:57:05 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate_a_back(t_stack **a, int count)
+void	reverse_stack(t_stack **a, int count)
 {
 	t_stack	*temp;
 	t_stack	*b;
@@ -62,7 +62,7 @@ void	sort_small(t_stack **a, t_stack **b, int count)
 	return ;
 }
 
-static void	sort_big_scnd(t_stack **a, int *backup, int count)
+void	sort_big_scnd(t_stack **a, int *backup, int count)
 {
 	t_stack	*b;
 	int		*lis;
@@ -76,7 +76,7 @@ static void	sort_big_scnd(t_stack **a, int *backup, int count)
 		push(&(*a), &b, 'b');
 		sort_small(&(*a), &b, count);
 	}
-	if (count > 5)
+	else
 	{
 		lis = get_lis(backup, count);
 		push_to_stack_b(lis, &(*a), &b, count);
@@ -87,7 +87,7 @@ static void	sort_big_scnd(t_stack **a, int *backup, int count)
 		min_pos = cheapest_number(&(*a), &b);
 		push_back(&(*a), &b, min_pos);
 	}
-	rotate_a_back(&*a, count_nodes(*a));
+	reverse_stack(&*a, count_nodes(*a));
 }
 
 void	sort_big(t_stack **a, int count)
