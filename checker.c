@@ -1,23 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_arr.c                                      :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 07:55:51 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/20 12:35:12 by kmatjuhi         ###   ########.fr       */
+/*   Created: 2024/01/20 14:46:39 by kmatjuhi          #+#    #+#             */
+/*   Updated: 2024/01/20 14:46:51 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_free_arr(char **value)
-{
-	int	i;
-
-	i = 0;
-	while (value[i])
-		free(value[i++]);
-	free(value);
-}
+#include "push_swap.h"

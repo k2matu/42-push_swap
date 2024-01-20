@@ -6,13 +6,13 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 13:06:30 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2023/11/08 12:51:02 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/20 18:00:31 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	length(long int n, int neg)
+static int	length_itoa(long int n, int neg)
 {
 	int	i;
 
@@ -65,7 +65,7 @@ char	*ft_itoa(int n)
 		num *= -1;
 		neg = 1;
 	}
-	i = length(num, neg);
+	i = length_itoa(num, neg);
 	dest = (char *)malloc(sizeof(char) * i + 1);
 	if (!dest)
 		return (NULL);

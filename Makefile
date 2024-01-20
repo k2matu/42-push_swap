@@ -6,27 +6,35 @@
 #    By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/08 18:16:05 by kmatjuhi          #+#    #+#              #
-#    Updated: 2024/01/19 15:10:28 by kmatjuhi         ###   ########.fr        #
+#    Updated: 2024/01/20 18:47:54 by kmatjuhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 LIBFT	=	libft/libft.a
 
 NAME	=	push_swap
+CHECK	=	checker
 
-SRCS	=	push_swap.c list_utilities.c stoi.c operations.c sort_utilities.c lis.c \
-			quick_sort.c cheapest_number.c check.c push_back.c count_moves.c
+SRCS	=	push_swap.c list_utils.c stoi.c operations.c sort_utils.c lis.c \
+			quick_sort.c cheapest_number.c check_sorted.c push_back.c count_moves.c
+CHECK_SRCS	=	$(wildcard *.c) checker.c
 
-OFILES	=	$(SRCS:.c=.o)
+OBJS	=	$(SRCS:.c=.o)
+CHECK_OBJS	=	$(CHECK_SRCS:.c=.o)
 
 CC		=	cc
 RM		=	-rm -f
 CFLAGS	=	-Wall -Werror -Wextra
 
-all: $(NAME)
+all: $(NAME) $(CHECK)
 
-$(NAME): $(LIBFT) ${OFILES}
-	$(CC) $(CFLAGS) $(OFILES) $(LIBFT) -o $(NAME)
+bonus: $(CHECK)
+
+$(NAME): $(LIBFT) ${OBJS}
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+	
+$(CHECK): $(LIBFT) ${CHECK_OBJS}
+	$(CC) $(CFLAGS) $(CHECK_OBJS) $(LIBFT) -o $(CHECK)
 
 $(LIBFT):
 	make -C ./libft
@@ -36,11 +44,12 @@ $(LIBFT):
 
 clean:
 		make clean -C libft
-		$(RM) $(OFILES)
+		$(RM) $(OBJS)
+		$(RM) $(CHECK_OBJS)
 	
 fclean: clean
 		make fclean -C libft
-		$(RM) $(NAME) $(OFILES)
+		$(RM) $(NAME) $(OBJS) $(CHECK_OBJS)
 
 re: fclean all
 

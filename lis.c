@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 12:48:12 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/16 20:57:31 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/20 13:13:23 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ static int	*create_lis(int *t, int *arr, int max, int i)
 	int	*lis;
 
 	lis = (int *)malloc(sizeof(int) * max);
+	if (!lis)
+	{
+		free(arr);
+		exit(-1);
+	}
 	while (max != 0)
 	{
 		if (t[i] == max)

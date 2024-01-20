@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 13:32:30 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/20 12:09:06 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/20 13:03:44 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	sort_small(t_stack **a, t_stack **b, int count)
 	return ;
 }
 
-void	sort_big_scnd(t_stack **a, int *backup, int count)
+void	sort_big_scnd(t_stack **a, int *arr, int count)
 {
 	t_stack	*b;
 	int		*lis;
@@ -78,7 +78,7 @@ void	sort_big_scnd(t_stack **a, int *backup, int count)
 	}
 	else
 	{
-		lis = get_lis(backup, count);
+		lis = get_lis(arr, count);
 		push_to_stack_b(lis, &(*a), &b, count);
 		free(lis);
 	}
@@ -93,15 +93,15 @@ void	sort_big_scnd(t_stack **a, int *backup, int count)
 void	sort_big(t_stack **a, int count)
 {
 	int		*arr;
-	int		*backup;
+	int		*xtra;
 
 	arr = lst_to_arr(a, count);
-	backup = lst_to_arr(a, count);
 	quicksort(arr, 0, count - 1);
 	fill_stack_pos(&(*a), arr, count);
 	free(arr);
-	sort_big_scnd(&(*a), backup, count);
-	free(backup);
+	xtra = lst_to_arr(a, count);
+	sort_big_scnd(&(*a), xtra, count);
+	free(xtra);
 }
 
 int	main(int argc, char *argv[])

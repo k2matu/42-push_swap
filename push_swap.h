@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 13:32:33 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/20 12:20:24 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/20 17:54:25 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include "libft/ft_printf.h"
 
 typedef struct s_stack
 {
