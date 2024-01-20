@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 13:50:46 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 11:10:48 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/20 12:17:08 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	swap(t_stack **a_lst, t_stack **b_lst, char c)
 			return ;
 		swap_second(b_lst);
 	}
-	printf("s%c\n", c);
+	ft_printf("s%c\n", c);
 }
 
 void	push(t_stack **src, t_stack **dest, char c)
@@ -68,7 +68,7 @@ void	push(t_stack **src, t_stack **dest, char c)
 		temp->prev = temp;
 	}
 	add_front(&(*dest), temp);
-	printf("p%c\n", c);
+	ft_printf("p%c\n", c);
 }
 
 void	rotate(t_stack **a_lst, t_stack **b_lst, char c)
@@ -85,7 +85,7 @@ void	rotate(t_stack **a_lst, t_stack **b_lst, char c)
 			return ;
 		*b_lst = (*b_lst)->next;
 	}
-	printf("r%c\n", c);
+	ft_printf("r%c\n", c);
 }
 
 void	reverse_rotate(t_stack **a_lst, t_stack **b_lst, char c)
@@ -102,5 +102,5 @@ void	reverse_rotate(t_stack **a_lst, t_stack **b_lst, char c)
 			return ;
 		*b_lst = (*b_lst)->prev;
 	}
-	printf("rr%c\n", c);
+	ft_printf("rr%c\n", c);
 }
