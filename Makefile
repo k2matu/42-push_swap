@@ -6,7 +6,7 @@
 #    By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/08 18:16:05 by kmatjuhi          #+#    #+#              #
-#    Updated: 2024/01/20 18:47:54 by kmatjuhi         ###   ########.fr        #
+#    Updated: 2024/01/21 08:09:00 by kmatjuhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CHECK	=	checker
 
 SRCS	=	push_swap.c list_utils.c stoi.c operations.c sort_utils.c lis.c \
 			quick_sort.c cheapest_number.c check_sorted.c push_back.c count_moves.c
-CHECK_SRCS	=	$(wildcard *.c) checker.c
+CHECK_SRCS	=	checker.c stoi.c list_utils.c operations_bonus.c check_sorted.c REMOVE.c
 
 OBJS	=	$(SRCS:.c=.o)
 CHECK_OBJS	=	$(CHECK_SRCS:.c=.o)
@@ -26,7 +26,7 @@ CC		=	cc
 RM		=	-rm -f
 CFLAGS	=	-Wall -Werror -Wextra
 
-all: $(NAME) $(CHECK)
+all: $(NAME)
 
 bonus: $(CHECK)
 

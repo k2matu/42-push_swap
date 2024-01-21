@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_utiles.c                                      :+:      :+:    :+:   */
+/*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 09:02:45 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/18 13:45:54 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/21 07:32:53 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,18 @@ void	free_stack(t_stack **stack)
 {
 	t_stack	*temp;
 	t_stack	*next;
-
-	temp = (*stack)->next;
-	while (temp != *stack)
+	
+	if (*stack)
 	{
-		next = temp->next;
-		free(temp);
-		temp = next;
+		temp = (*stack)->next;
+		while (temp != *stack)
+		{
+			next = temp->next;
+			free(temp);
+			temp = next;
+		}
+		free(*stack);
 	}
-	free(*stack);
 }
 
 int	count_nodes(t_stack *stack)
