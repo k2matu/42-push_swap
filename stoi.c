@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 09:43:24 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/20 12:33:15 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/21 12:07:30 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static int	error_check(t_stack *stack, char *str, long n)
 {
 	t_stack	*temp;
 
+	if (str[0] == '\0')
+		return (-1);
 	if (n < -2147483648 || n > 2147483647)
 		return (-1);
 	if (n == 0 && ft_strncmp(str, "0", ft_strlen(str)) != 0)

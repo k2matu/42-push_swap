@@ -6,7 +6,7 @@
 /*   By: kmatjuhi <kmatjuhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:46:39 by kmatjuhi          #+#    #+#             */
-/*   Updated: 2024/01/21 12:03:17 by kmatjuhi         ###   ########.fr       */
+/*   Updated: 2024/01/21 12:28:45 by kmatjuhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ int main(int argc, char *argv[])
 	}
 	count = count_nodes(a);
 	line = get_next_line(0);
+	// if (count == 1 && line)
+	// 	handle_error(line, a, b);
 	while (line && line[0] != '\n')
 	{
 		execute_cmd(line, &a, &b);
