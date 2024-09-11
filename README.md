@@ -27,13 +27,9 @@ At the end of the process, stack B must be empty and all integers must be in sta
 The sorting process combines the Longest Increasing Subsequence (LIS) algorithm and the Turk algorithm.
 
 #### Steps:
-1. Initialization:
+1. All integers are initially placed on Stack A.
 
-All integers are initially placed on Stack A.
-
-2. Find Longest Increasing Subsequence (LIS):
-
-Identify the LIS of the integers using the Longest Increasing Subsequence algorithm.
+2. Find Longest Increasing Subsequence (LIS): Identify the LIS of the integers using the Longest Increasing Subsequence algorithm.
 
 3. Organize Stack B:
 
@@ -42,9 +38,7 @@ Rotate Stack B once after each push if the number is below the mean. This result
 - Numbers below the mean at the bottom.
 - Numbers above the mean at the top.
 
-4. Sort Stack A:
-
-Numbers remaining in Stack A are now sorted.
+4. Numbers remaining in Stack A are now sorted.
 
 5. Move each number from Stack B back to Stack A, 
 Utilize the Turk algorithm to move the "cheapest number" from Stack B back to Stack A.
