@@ -48,6 +48,10 @@ Utilize the **Turk algorithm** to move the "cheapest number" from Stack B back t
 #### Data Structure
 The integers are stored in a **Circular Doubly Linked List**.
 
+## Prerequisites
+- A C compiler (e.g., `gcc` or `clang`)
+- `make`
+
 ## Compilation
 1. Clone the repository:
 ```
