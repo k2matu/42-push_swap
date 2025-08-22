@@ -1,5 +1,5 @@
 # Push swap 125/100
-push_swap is a sorting algorithm project where the goal is to sort a stack of integers using two stacks and a set of predefined instructions to manipulate these stacks. The objective is to achieve the sorted order with the minimal number of moves.
+**Push_swap** is a **sorting algorithm** project where the goal is to sort a stack of integers using two stacks and a set of predefined instructions to manipulate these stacks. The objective is to achieve the sorted order with the minimal number of moves.
 
 ## The rules
 You have 2 stacks named A and B.
@@ -24,12 +24,12 @@ At the end of the process, stack B must be empty and all integers must be in sta
 
 
 ## Algorithm 
-The sorting process combines the Longest Increasing Subsequence (LIS) algorithm and the Turk algorithm.
+The sorting process combines the **Longest Increasing Subsequence (LIS) algorithm** and the **Turk algorithm**.
 
 #### Steps:
 1. All integers are initially placed on Stack A.
 
-2. Find Longest Increasing Subsequence (LIS): Identify the LIS of the integers using the Longest Increasing Subsequence algorithm.
+2. Find **Longest Increasing Subsequence (LIS)**: Identify the LIS of the integers using the Longest Increasing Subsequence algorithm.
 
 3. Organize Stack B:
 
@@ -41,17 +41,17 @@ Rotate Stack B once after each push if the number is below the mean. This result
 4. Numbers remaining in Stack A are now sorted.
 
 5. Move each number from Stack B back to Stack A, 
-Utilize the Turk algorithm to move the "cheapest number" from Stack B back to Stack A.
+Utilize the **Turk algorithm** to move the "cheapest number" from Stack B back to Stack A.
 
 6. Stack A will now contain all integers sorted in ascending order.
 
 #### Data Structure
-The integers are stored in a Circular Doubly Linked List.
+The integers are stored in a **Circular Doubly Linked List**.
 
 ## Compilation
 1. Clone the repository:
 ```
-git clone git@github.com:k2matu/push_swap.git
+git clone git@github.com:k2matu/42-push_swap.git push_swap
 ````
 2. Navigate into the directory:
 ```
