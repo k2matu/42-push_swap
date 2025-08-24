@@ -72,46 +72,50 @@ To run the sorting algorithm, compile the program and execute it with the list o
 Example:
 ```
 ./push_swap 3 100 4 32 65 49 2 62 15 31 5
-# Output:
-# ra
-# pb
-# ra
-# ra
-# pb
-# ra
-# pb
-# rb
-# ra
-# pb
-# rb
-# pb
-# pb
-# rb
-# rb
-# pa
-# ra
-# pa
-# ra
-# pa
-# ra
-# ra
-# ra
-# pa
-# pa
-# ra
-# ra
-# pa
-# rra
-# rra
-# rra
-# rra
-# rra
+```
+Output:
+```
+ra
+pb
+ra
+ra
+pb
+ra
+pb
+rb
+ra
+pb
+rb
+pb
+pb
+rb
+rb
+pa
+ra
+pa
+ra
+pa
+ra
+ra
+ra
+pa
+pa
+ra
+ra
+pa
+rra
+rra
+rra
+rra
+rra
 ```
 Example:
 ```
 ./push_swap 3 100 4 32 65 49 2 62 15 31 5 | wc -l
-# Output:
-# 33
+```
+Output:
+```
+33
 ```
 
 ## Appendix
